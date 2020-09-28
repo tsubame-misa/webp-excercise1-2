@@ -1,0 +1,20 @@
+h1 {
+  color: brown;
+  font-size: 50px;
+  font-family: "MS Serif";
+  background-color: blanchedalmond;
+}
+
+h3 {
+  color: brown;
+  font-size: 50px;
+  font-family: "Georgia";
+}
+
+p1 {
+  font: outline;
+}
+
+header {
+  background-color: gold;
+}
