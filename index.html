@@ -34,10 +34,64 @@
     <section class="hero">
       <div class="hero-body">
         <h class="subtitle">その１ ボタン</h>
+
         <div class="container">
-          <button id="id_1" class="button">alert</button>
-          <button class="button">button2</button>
-          <button class="button">button3</button>
+          <h>ノーマル</h>
+          <div>
+            <button id="id_1" class="button">alert</button>
+            <button class="button">button2</button>
+            <button class="button">button3</button>
+          </div>
+        </div>
+
+        <div>
+          <h>ラジオボタン</h>
+          <p>一つしか選択できないよ！</p>
+          <div class="control">
+            <label class="radio">
+              <input type="radio" name="rsvp" />
+              Going
+            </label>
+            <label class="radio">
+              <input type="radio" name="rsvp" />
+              Not going
+            </label>
+            <label class="radio" disabled>
+              <input type="radio" name="rsvp" disabled />
+              押せないよ
+            </label>
+          </div>
+        </div>
+        　　　　　　
+        <div>
+          <h>チェックボックス</h>
+          <p>複数選択できるよ！</p>
+          <div>
+            <label class="checkbox">
+              <input type="checkbox" />
+              smile1
+            </label>
+            <label class="checkbox">
+              <input type="checkbox" />
+              smile2
+            </label>
+            <label class="checkbox">
+              <input type="checkbox" />
+              smile2
+            </label>
+          </div>
+        </div>
+
+        <div>
+          <h>プルダウン</h>
+          <div>
+            <div class="select">
+              <select>
+                <option>Select dropdown</option>
+                <option>With options</option>
+              </select>
+            </div>
+          </div>
         </div>
       </div>
     </section>
