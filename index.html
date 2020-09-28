@@ -35,16 +35,18 @@
       <div class="hero-body">
         <h class="subtitle">その１ ボタン</h>
 
-        <div class="container">
+        <div class="container" style="margin-top: 3vh">
           <h>ノーマル</h>
           <div>
             <button id="id_1" class="button">alert</button>
-            <button class="button">button2</button>
+            <button class="button" onclick="counter2()">
+              <p><span id="press-button">0</span>回</p>
+            </button>
             <button class="button">button3</button>
           </div>
         </div>
 
-        <div>
+        <div style="margin-top: 5vh">
           <h>ラジオボタン</h>
           <p>一つしか選択できないよ！</p>
           <div class="control">
@@ -63,7 +65,7 @@
           </div>
         </div>
         　　　　　　
-        <div>
+        <div style="margin-top: 0vh">
           <h>チェックボックス</h>
           <p>複数選択できるよ！</p>
           <div>
@@ -82,14 +84,17 @@
           </div>
         </div>
 
-        <div>
+        <div style="margin-top: 5vh">
           <h>プルダウン</h>
           <div>
             <div class="select">
-              <select>
-                <option>Select dropdown</option>
-                <option>With options</option>
+              <select id="select-pic">
+                <option value="one">okiya 1</option>
+                <option value="two">okiya 2</option>
               </select>
+              <p>
+                <img src="./okiya.jpg" width="180" height="120" name="imgsmp" />
+              </p>
             </div>
           </div>
         </div>
@@ -97,25 +102,47 @@
     </section>
 
     <!--<p id="id_1">1. JS側にonclick書いてクリックイベント発火。</p>-->
-    <p id="id_2">2. JSでは無名関数も使えるよ！</p>
-    <p onclick="pClick()">3. HTMLでonclick属性書いた。クリックしてみて！</p>
-    <p id="id_3" class="foo-before">
-      4. クリックするたび色変わるよ！（クラスの入れ替えをjQueryで実装）
-    </p>
-    <p id="id_4">5. クリックするとCSS追加されるよ！</p>
+    <div style="margin-top: 20vh">
+      <p onclick="pClick()">3. HTMLでonclick属性書いた。クリックしてみて！</p>
+      <p id="id_3" class="foo-before">
+        4. クリックするたび色変わるよ！（クラスの入れ替えをjQueryで実装）
+      </p>
+      <p id="id_4">5. クリックするとCSS追加されるよ！</p>
+    </div>
 
     <script type="text/javascript">
-      // 変数定義（「//」から始まる行はコメントアウト）
-      var id_1 = document.getElementById("id_1");
-      var id_2 = document.getElementById("id_2");
-      var id_3 = document.getElementById("id_3");
+      const id_1 = document.getElementById("id_1");
+      const id_2 = document.getElementById("id_2");
+      const id_3 = document.getElementById("id_3");
+      const pic_selected = document.getElementById("select-pic");
+      let cnt = 0;
 
-      // id_1（id_2）をクリックしたら、functionの中身を実行
+      //button1
       id_1.onclick = function id1Click() {
-        alert("id_1クリックしたよ！");
+        alert("ボタンをクリックしたよ！");
       };
-      id_2.onclick = function () {
-        alert("id_2クリック！関数名は書いても書かなくてもOK！");
+
+      //button2
+      function counter2() {
+        cnt++;
+        document.getElementById("press-button").innerHTML = cnt;
+      }
+
+      //pulldowon
+      img0 = new Image();
+      img0.src = "./okiya.jpg";
+      img1 = new Image();
+      img1.src = "./okiya2.jpg";
+      pic_selected.onchange = function () {
+        console.log(pic_selected.options);
+        fname = pic_selected.options[pic_selected.selectedIndex].value;
+        console.log(fname);
+        if (fname == "one") {
+          document.imgsmp.src = img0.src;
+        }
+        if (fname == "two") {
+          document.imgsmp.src = img1.src;
+        }
       };
 
       // HTML側にクリックイベント記述
