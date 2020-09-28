@@ -1,33 +1,9 @@
-<!-----
 <!DOCTYPE html>
 <html>
   <head>
+    <title>Hello World!</title>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="sample.css" />
-   
-    <title>hello</title>
-    <h1>hello2</h1>
-  </head>
-  <body>
-    hello world!
- 
-    <button>  <p　id="id_1"> クリックしてみよう！</p></button>
-  
-    <script type="text/javascript">
-    const id_1 = document.getElementById("id_1");
-    id_1.onclick = function idClick(){
-        alert("クリックしたよ！")
-    }
-    </script>
-  </body>
-</html>
--->
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>ここにページのタイトル書くよ！</title>
-    <meta charset="utf-8" />
-    <style type="text/css">
+    <!---- <style type="text/css">
       .foo-before {
         background-color: white;
         color: black;
@@ -36,11 +12,37 @@
         background-color: black;
         color: yellow;
       }
-    </style>
+    </style>--->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css"
+    />
+    <link rel="stylesheet" href="sample.css" />
   </head>
 
+  <header>
+    <section class="hero">
+      <div class="hero-body">
+        <titele class="title">Hello World!</titele>
+        <p>
+          初めてのwebサイト作り()ということで色々なことを試してみるページだよ！
+        </p>
+      </div>
+    </section>
+  </header>
   <body>
-    <p id="id_1">1. JS側にonclick書いてクリックイベント発火。</p>
+    <section class="hero">
+      <div class="hero-body">
+        <h class="subtitle">その１ ボタン</h>
+        <div class="container">
+          <button id="id_1" class="button">alert</button>
+          <button class="button">button2</button>
+          <button class="button">button3</button>
+        </div>
+      </div>
+    </section>
+
+    <!--<p id="id_1">1. JS側にonclick書いてクリックイベント発火。</p>-->
     <p id="id_2">2. JSでは無名関数も使えるよ！</p>
     <p onclick="pClick()">3. HTMLでonclick属性書いた。クリックしてみて！</p>
     <p id="id_3" class="foo-before">
