@@ -18,6 +18,11 @@
       href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css"
     />
     <link rel="stylesheet" href="sample.css" />
+    <!---アイコンとかのやつ↓-->
+    <link
+      href="https://use.fontawesome.com/releases/v5.0.8/css/all.css"
+      rel="stylesheet"
+    />
   </head>
 
   <header>
@@ -35,14 +40,24 @@
       <div class="hero-body">
         <h class="subtitle">その１ ボタン</h>
 
-        <section class="content" style="margin-top: 3vh">
+        <section class="content">
           <h>ノーマル</h>
           <div>
             <button id="id_1" class="button">alert</button>
             <button class="button" onclick="counter2()">
               <p><span id="press-button">0</span>回</p>
             </button>
-            <button class="button">button3</button>
+
+            <div class="popup" id="js-popup">
+              <div class="popup-inner">
+                <div class="close-btn" id="js-close-btn">
+                  <i class="fas fa-times"></i>
+                </div>
+                <a href="#"><img src="./okiya.jpg" /></a>
+              </div>
+              <div class="black-background" id="js-black-bg"></div>
+            </div>
+            <button class="button" , id="js-show-popup">Popup</button>
           </div>
         </section>
 
@@ -139,6 +154,13 @@
       </div>
     </section>
 
+    <p>
+      <a
+        href="javascript:(function () {var s = document.createElement('script');s.setAttribute('src', 'http://fontbomb.ilex.ca/js/main.js');document.body.appendChild(s);}());"
+        ><strong>Fontbomb</strong></a
+      >
+    </p>
+
     <script type="text/javascript">
       const id_1 = document.getElementById("id_1");
       const id_2 = document.getElementById("id_2");
@@ -146,16 +168,40 @@
       const pic_selected = document.getElementById("select-pic");
       let cnt = 0;
 
-      //button1
+      //button1-alert
       id_1.onclick = function id1Click() {
         alert("ボタンをクリックしたよ！");
       };
 
-      //button2
+      //button2-count
       function counter2() {
         cnt++;
         document.getElementById("press-button").innerHTML = cnt;
       }
+
+      //button3-popup
+      function popupImage() {
+        const popup = document.getElementById("js-popup");
+        if (!popup) return;
+
+        //var blackBg = document.getElementById("js-black-bg");
+
+        const blackBg = document.getElementById("js-black-bg");
+        const closeBtn = document.getElementById("js-close-btn");
+        const showBtn = document.getElementById("js-show-popup");
+
+        closePopUp(blackBg);
+        closePopUp(closeBtn);
+        closePopUp(showBtn);
+        function closePopUp(elem) {
+          if (!elem) return;
+          elem.addEventListener("click", function () {
+            //elementにクラス名があれば、クラス名を除去,なければ追加
+            popup.classList.toggle("is-show");
+          });
+        }
+      }
+      popupImage();
 
       //pulldowon
       img0 = new Image();
@@ -174,5 +220,9 @@
         }
       };
     </script>
+    <script
+      type="text/javascript"
+      src="http://use.typekit.com/qcc5ovd.js"
+    ></script>
   </body>
 </html>
