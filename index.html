@@ -23,6 +23,8 @@
       href="https://use.fontawesome.com/releases/v5.0.8/css/all.css"
       rel="stylesheet"
     />
+    <!--フォント読み込み-->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
   </head>
 
   <header>
@@ -36,7 +38,18 @@
     </section>
   </header>
   <body>
-    <section class="hero">
+    <div class="hero">
+      <div class="hero-body">
+      <h>項目</h>
+      <p>このページの内容を箇条書きしていくよ
+        <li>button</li>
+        <li>form</li>
+      </p>
+      <a href="https://www.conan-portal.com/#newsContent">コナン公式サイトはこちらから！</a>
+      </div>
+    </div>
+
+    <div class="hero">
       <div class="hero-body">
         <h class="subtitle">その１ ボタン</h>
 
@@ -53,12 +66,22 @@
                 <div class="close-btn" id="js-close-btn">
                   <i class="fas fa-times"></i>
                 </div>
-                <a href="#"><img src="./okiya.jpg" /></a>
+                <a href="#"><img src="images/okiya.jpg" /></a>
               </div>
               <div class="black-background" id="js-black-bg"></div>
             </div>
             <button class="button" , id="js-show-popup">Popup</button>
-          </div>
+            
+
+            <button class="button">
+              <a
+                href="javascript:(function () {var s = document.createElement('script');s.setAttribute('src', 'http://fontbomb.ilex.ca/js/main.js');document.body.appendChild(s);}());"
+                ><strong>Fontbomb</strong></a>
+            </button>
+            <p>※Fontbombを押した後にこのページの文字の上をクリックすると何かが起こるよ！
+              <br/>&emsp;困ったらリロードしてね
+            </p>
+            
         </section>
 
         <section class="content">
@@ -109,57 +132,32 @@
               </select>
             </div>
             <p>
-              <img src="./okiya.jpg" name="imgsmp" />
+              <img src="images/okiya.jpg" alt="okiya" name="imgsmp" />
             </p>
           </div>
         </section>
-
-        <!--<section class="content">
-          <form action="cgi-bin/formmail.cgi" method="post">
-            ご感想：<br />
-            <textarea name="kanso" rows="4" cols="40">
-  ここに感想を記入してください。</textarea
-            ><br />
-            <input type="submit" value="送信" /><input
-              type="reset"
-              value="リセット"
-            />
-          </form>
-        </section>-->
-
+      </div>
+      
+      <div class="hero-body">
         <div class="media-content">
-          <div class="field">
+          <!--<div class="field">-->
+            <form class="field">
             <p class="control">
               <textarea
                 class="textarea"
                 placeholder="Add a comment..."
               ></textarea>
-            </p>
-          </div>
-          <nav class="level">
-            <div class="level-left">
-              <div class="level-item">
-                <a class="button is-info">Submit</a>
-              </div>
-            </div>
-            <div class="level-right">
-              <div class="level-item">
-                <label class="checkbox">
-                  <input type="checkbox" /> Press enter to submit
-                </label>
-              </div>
-            </div>
-          </nav>
+            <input type="reset" class="button"/>
+            <input type="submit" class="button"/>
+            <button class="button">submit</button>    
+            </form>
+          <!--</div>   -->
         </div>
       </div>
+    </form>
     </section>
 
-    <p>
-      <a
-        href="javascript:(function () {var s = document.createElement('script');s.setAttribute('src', 'http://fontbomb.ilex.ca/js/main.js');document.body.appendChild(s);}());"
-        ><strong>Fontbomb</strong></a
-      >
-    </p>
+    
 
     <script type="text/javascript">
       const id_1 = document.getElementById("id_1");
@@ -205,9 +203,9 @@
 
       //pulldowon
       img0 = new Image();
-      img0.src = "./okiya.jpg";
+      img0.src = "images/okiya.jpg";
       img1 = new Image();
-      img1.src = "./okiya2.jpg";
+      img1.src = "images/okiya2.jpg";
       pic_selected.onchange = function () {
         console.log(pic_selected.options);
         fname = pic_selected.options[pic_selected.selectedIndex].value;
@@ -220,9 +218,6 @@
         }
       };
     </script>
-    <script
-      type="text/javascript"
-      src="http://use.typekit.com/qcc5ovd.js"
-    ></script>
+    
   </body>
 </html>

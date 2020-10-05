@@ -1,20 +1,6 @@
-/*h1 {
-  color: brown;
-  font-size: 50px;
-  font-family: "MS Serif";
-  background-color: blanchedalmond;
+html {
+  font-family: "Open Sans";
 }
-
-h3 {
-  color: brown;
-  font-size: 50px;
-  font-family: "Georgia";
-}
-
-p1 {
-  font: outline;
-}
-*/
 
 head {
   background-color: rgb(0, 127, 247);
